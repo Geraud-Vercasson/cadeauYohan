@@ -14,7 +14,7 @@
 * page 'Edit' des informations d'une boisson
 
 ## ETAPE 7
-###Livrables attendus
+### Livrables attendus
 * Description fonctionnelle de la ressource "boisson" mis à jour (avec les méthodes HTTP GET, POST, PUT, DELETE)
 * Pages d'ajout et de modification de boisson (nom et prix uniquement)
 * Données mis à jour dans la DB
