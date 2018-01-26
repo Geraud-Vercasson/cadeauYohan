@@ -33,8 +33,9 @@ Route::get('/recettes', 'RecettesController@index');
 Route::get('/recettes/create','RecettesController@create');
 Route::post('/recettes', 'RecettesController@store');
 
-Route::get('/recettes/{boisson}','RecettesController@show');
-
+Route::get('/recettes/byBoisson/{boisson}','RecettesController@show');
+Route::get('/recettes/{recette}/edit', 'RecettesController@edit');
+Route::put('/recettes/{recette}', 'RecettesController@update');
 //Ingredients
 
 Route::get('/ingredients', 'IngredientsController@index');

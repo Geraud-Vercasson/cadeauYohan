@@ -33,7 +33,7 @@
                   <td>{{$boisson->id}}</td>
                   <td>{{$boisson->name}}</td>
                   <td>{{$boisson->price}}</td>
-                  <td><a href="/recettes/{{$boisson->id}}" class="btn btn-info"> Recette</a></td>
+                  <td><a href="/recettes/byBoisson/{{$boisson->id}}" class="btn btn-info"> Recette</a></td>
                   <td><a class="btn btn-info" href="/boissons/edit/{{$boisson->id}}"> Editer</a></td>
                   <td><a class="btn btn-danger" href="/boissons/delete/{{$boisson->id}}">Supprimer</a></td>
               </tr>

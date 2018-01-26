@@ -45,7 +45,15 @@ class RecettesController extends Controller
     }
     
     public function edit(Recette $recette){
-        echo Recette;
+        $ingredients = Ingredient::all();
+        return view('recettes.edit', compact('recette', 'ingredients'));
+    }
+    
+    public function update(Recette $recette, Request $request){
+        $recette->update(['ingredient_id' => $request->ingredientId,
+                            'quantite' => $request->quantite]);
+        
+        return self::show($recette->boisson);
     }
 }
 

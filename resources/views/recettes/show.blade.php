@@ -14,6 +14,7 @@
             <tr>
                 <td>{{$recette->ingredient->name}}</td>
                 <td>{{$recette->quantite}}</td>
+                <td><a href="/recettes/{{$recette->id}}/edit" class="btn btn-success">Editer</a></td>
             </tr>
         @endforeach
         </tbody>
