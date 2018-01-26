@@ -31,7 +31,8 @@ Route::put('/boissons/priceSort','BoissonsController@sortByPrice');
 // Recettes
 Route::get('/recettes', 'RecettesController@index');
 Route::get('/recettes/create','RecettesController@create');
-Route::get('/recettes/store', 'RecettesController@store');
+Route::post('/recettes', 'RecettesController@store');
+
 Route::get('/recettes/{boisson}','RecettesController@show');
 
 //Ingredients

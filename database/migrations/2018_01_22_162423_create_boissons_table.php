@@ -14,7 +14,6 @@ class CreateBoissonsTable extends Migration
     public function up()
     {
         Schema::create('boissons', function (Blueprint $table) {
-            $table->engine= 'InnoDB';
             $table->increments('id');
             $table->string('name');
             $table->integer('price');

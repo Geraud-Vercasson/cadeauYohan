@@ -18,4 +18,5 @@
         @endforeach
         </tbody>
     </table>
+    <a href="/recettes/create" class="btn btn-primary">Ajouter un ingrédient</a>
 @endsection
