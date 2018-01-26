@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBoissonsTable extends Migration
+class ActivateForeignConstraint extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,7 @@ class CreateBoissonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('boissons', function (Blueprint $table) {
-            $table->engine= 'InnoDB';
-            $table->increments('id');
-            $table->string('name');
-            $table->integer('price');
-            $table->timestamps();
-        });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -29,6 +23,6 @@ class CreateBoissonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boissons');
+        Schema::disableForeignKeyConstraints();
     }
 }

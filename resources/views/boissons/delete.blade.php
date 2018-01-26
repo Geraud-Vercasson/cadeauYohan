@@ -6,7 +6,7 @@
     <h3>Etes vous sûr de vouloir supprimer la boisson {{$boisson->name}} ?</h3>
     <form action="/boissons/delete/{{$boisson->id}}" method="post">
         {{csrf_field()}}
-         <input type="hidden" name="_method" value="DELETE">
+        {{method_field('DELETE')}}
         <input type="submit" value="Supprimer" class="btn btn-danger">
         </form>
     </form>

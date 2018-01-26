@@ -23,24 +23,24 @@ class BoissonsController extends Controller
         return self::show();
     }
     
-    public function editPage($id){
-        $boisson = Boisson::find($id);
+    public function editPage(Boisson $boisson){
+        
         return view('boissons.edit', compact('boisson'));
     }
     
-    public function edit(Request $request, $id){
-        $boisson = Boisson::find($id);
-        $boisson->name = $request->newName;
-        $boisson->price = $request->newPrice;
-    
-        $boisson->save();
+    public function edit(Request $request,Boisson $boisson){
+//        $boisson->name = $request->newName;
+//        $boisson->price = $request->newPrice;
+//
+//        $boisson->save();
+//
+        $boisson->update(['name' => $request->newName,
+                            'price' => $request->newPrice]);
         
         return self::show();
     }
     
-    public function deletePage($id){
-        $boisson = Boisson::find($id);
-        
+    public function deletePage(Boisson $boisson){
         return view('boissons.delete', compact('boisson'));
     }
     

@@ -10,9 +10,11 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <script src="{{asset('js/app.js')}}"></script>
 
 </head>
 <body>
+@include('utilities.navbar')
     <div class="container">
         @yield('content')
     </div>
