@@ -36,6 +36,8 @@ class RecettesController extends Controller
             'ingredient_id' => $request->idIngredient,
             'quantite' => $request->quantite]);
         
+        return self::show(Boisson::find($request->idBoisson));
+        
         
     }
     
