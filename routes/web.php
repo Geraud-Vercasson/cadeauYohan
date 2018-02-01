@@ -36,6 +36,7 @@ Route::post('/recettes', 'RecettesController@store');
 Route::get('/recettes/byBoisson/{boisson}','RecettesController@show');
 Route::get('/recettes/{recette}/edit', 'RecettesController@edit');
 Route::put('/recettes/{recette}', 'RecettesController@update');
+Route::delete('/recettes/{recette}', 'RecettesController@delete')->name('recettes.destroy');
 //Ingredients
 
 Route::get('/ingredients', 'IngredientsController@index');

@@ -1,7 +1,6 @@
 @extends('main')
 @section('title', 'édition de la recette')
 @section('content')
-    {{dump($recette)}}
     <form action="/recettes/{{$recette->id}}" class="form-group" method="post">
         {{csrf_field()}}
         {{method_field('PUT')}}
@@ -36,4 +35,6 @@
 
         <input type="submit" value="Enregistrer" class="btn btn-success">
     </form>
+    @include('utilities.deleteModal', ['actionLink' => route('recettes.destroy', ['id' => $recette->id]),
+                                    'element' => $recette->name]);
 @endsection

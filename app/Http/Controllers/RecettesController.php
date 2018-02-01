@@ -31,29 +31,33 @@ class RecettesController extends Controller
     
     public function store(Request $request)
     {
-        // Vérifie que l'ingrédient ajouté ne soit pas déjà dans la recette de la boisson
         
-        if (empty(Recette::where('boissons_id', $request->idBoisson)
-                        ->where('ingredient_id', $request->idIngredient))) {
-            
-            Recette::create(['boisson_id' => $request->idBoisson,
-                'ingredient_id' => $request->idIngredient,
-                'quantite' => $request->quantite]);
-        }
+        Recette::create(['boisson_id' => $request->idBoisson,
+            'ingredient_id' => $request->idIngredient,
+            'quantite' => $request->quantite]);
         
-        return redirect('/recettes/' . $request->idBoisson);
+        
     }
     
-    public function edit(Recette $recette){
+    public function edit(Recette $recette)
+    {
         $ingredients = Ingredient::all();
         return view('recettes.edit', compact('recette', 'ingredients'));
     }
     
-    public function update(Recette $recette, Request $request){
+    public function update(Recette $recette, Request $request)
+    {
         $recette->update(['ingredient_id' => $request->ingredientId,
-                            'quantite' => $request->quantite]);
+            'quantite' => $request->quantite]);
         
         return self::show($recette->boisson);
     }
+    
+    public function delete(Recette $recette)
+    {   $boisson = $recette->boisson;
+       $recette->delete();
+       return self::show($boisson);
+    }
 }
+
 

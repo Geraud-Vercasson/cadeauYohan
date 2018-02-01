@@ -4,8 +4,10 @@
     <form action="/recettes" method="post">
         <table class="table">
             <thead>
-            <th>Propriété</th>
-            <th>Valeur</th>
+            <tr>
+                <th>Propriété</th>
+                <th>Valeur</th>
+            </tr>
             </thead>
             <tbody>
             <tr>
@@ -16,6 +18,7 @@
                         @endforeach
                     </select></td>
             </tr>
+
             <tr>
                 <td>Ingrédient :</td>
                 <td><select name="idIngredient" id="selectIngredient" class="form-control">
